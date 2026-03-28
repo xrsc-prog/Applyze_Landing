@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #3B6FE8;
+  --color-amber: #F59E0B;
+  --color-success: #10B981;
+  --color-danger: #EF4444;
+  --color-ink: #0F172A;
+  --color-muted: #64748B;
+  --color-surface: #F8FAFC;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@utility gradient-text {
+  background: linear-gradient(to right, var(--color-primary), var(--color-amber));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
