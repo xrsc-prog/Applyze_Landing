@@ -33,14 +33,16 @@ export default function SixDimensions() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
+          className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-6 px-6 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:pb-0 lg:-mx-0 lg:px-0 mb-8 lg:mb-16"
           variants={prefersReducedMotion ? {} : staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
         >
           {DIMENSIONS.map((dimension) => (
-            <DimensionCard key={dimension.name} dimension={dimension} />
+            <div key={dimension.name} className="snap-start flex-shrink-0 w-[80vw] lg:w-auto lg:flex-shrink">
+              <DimensionCard dimension={dimension} />
+            </div>
           ))}
         </motion.div>
 
