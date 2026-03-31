@@ -29,6 +29,31 @@
       scroll-behavior: auto;
     }
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+}
+
+/* ── Mobile responsive scale-down ───────────────────────────────────────────
+   Overrides large Tailwind utilities below lg (1024px) so headings never
+   overflow the viewport on a phone and sections don't feel cavernous.     */
+@layer utilities {
+  @media (max-width: 1023px) {
+    .text-5xl { font-size: 1.875rem; line-height: 1.1; }
+    .text-6xl { font-size: 2.25rem;  line-height: 1.05; }
+    .text-7xl { font-size: 2.5rem;   line-height: 1.0; }
+    .py-32    { padding-top: 4rem;   padding-bottom: 4rem; }
+    .pt-32    { padding-top: 4rem; }
+    .pb-32    { padding-bottom: 4rem; }
+    .mb-16    { margin-bottom: 2.5rem; }
+    .gap-16   { gap: 2rem; }
+    .p-8      { padding: 1.25rem; }
+    .p-10     { padding: 1.5rem; }
+    .px-8     { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .gap-8    { gap: 1.5rem; }
+    .gap-5    { gap: 0.75rem; }
+  }
 }
 
 @utility gradient-text {

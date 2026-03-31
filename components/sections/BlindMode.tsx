@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useReducedMotion, useInView } from 'framer-mot
 import { useTranslations } from '@/lib/i18n'
 import { APP_URL } from '@/lib/constants'
 import InteractionPulse from '@/components/ui/InteractionPulse'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 export default function BlindMode() {
   const [isBlind, setIsBlind] = useState(false)
@@ -13,19 +14,20 @@ export default function BlindMode() {
   const t = useTranslations('blindMode')
   const tCommon = useTranslations('common')
   const prefersReducedMotion = useReducedMotion()
+  const isMobile = useIsMobile()
 
   const sectionRef = useRef<HTMLElement>(null)
-  const isInView = useInView(sectionRef, { once: true, margin: '-200px' })
+  const isInView = useInView(sectionRef, { once: true, margin: '-50px' })
 
   useEffect(() => {
     if (isInView && !isBlind && !autoTriggered && !prefersReducedMotion) {
       const timer = setTimeout(() => {
         setIsBlind(true)
         setAutoTriggered(true)
-      }, 3000)
+      }, isMobile ? 800 : 3000)
       return () => clearTimeout(timer)
     }
-  }, [isInView, isBlind, autoTriggered, prefersReducedMotion])
+  }, [isInView, isBlind, autoTriggered, prefersReducedMotion, isMobile])
 
   const PERSONAL_INFO = [
     t('normalCardAge'),
