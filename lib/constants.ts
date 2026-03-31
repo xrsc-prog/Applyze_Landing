@@ -130,6 +130,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       'growthF1',
       'growthF2',
       'growthF3',
+      'growthF4',
     ],
     cta: 'getStarted',
     ctaHref: 'https://app.applyze.ai',

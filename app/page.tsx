@@ -8,8 +8,8 @@ import DemoCV from '@/components/sections/DemoCV'
 import DemoDecisionRoom from '@/components/sections/DemoDecisionRoom'
 import SixDimensions from '@/components/sections/SixDimensions'
 import BlindMode from '@/components/sections/BlindMode'
-import DecisionRoom from '@/components/sections/DecisionRoom'
 import HiringIntelligence from '@/components/sections/HiringIntelligence'
+import TalentPoolDiscovery from '@/components/sections/TalentPoolDiscovery'
 import GDPRSection from '@/components/sections/GDPR'
 import TrustStrip from '@/components/sections/TrustStrip'
 import ATSIntegrations from '@/components/sections/ATSIntegrations'
@@ -48,8 +48,8 @@ export default function Home() {
         <ActDivider label={t('actDividerWhy')} />
         <SixDimensions />
         <BlindMode />
-        <DecisionRoom />
         <HiringIntelligence />
+        <TalentPoolDiscovery />
         <ActDivider label={t('actDividerBuilt')} />
         <GDPRSection />
         <TrustStrip />
