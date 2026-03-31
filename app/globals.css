@@ -16,6 +16,10 @@
     --font-inter: 'Inter', sans-serif;
   }
 
+  html, body {
+    overflow-x: hidden;
+  }
+
   html {
     scroll-behavior: smooth;
   }
